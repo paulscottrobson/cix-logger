@@ -13,3 +13,4 @@ cixlogger.pyz: airports.py connect.py __main__.py flight.py airportdb.py
 	rm cixlogger.pyz
 	make -C ..$(S)airportdb
 	zip cixlogger.pyz *.py
+	$(CCOPY) cixlogger.pyz ..
