@@ -34,7 +34,7 @@ class AbstractConnection:
 		for p in self.vatsimData["pilots"]:
 			if p["cid"] == vatsimID:
 				return p
-		return nil
+		return None
 
 # *****************************************************************************
 #
@@ -62,9 +62,9 @@ class LiveConnection(AbstractConnection):
 			return json.loads(url.read().decode())
 
 if __name__ == "__main__":
-	prec = LiveConnection().find(1438978)
+	prec = LiveConnection().find(1505974)
 	db = AirportDatabase()
-	fl = Flight(prec)
+	fl = Flight(prec)	
 	print(fl.getVatsimID())
 	print(fl.getName())	
 	print(fl.getCallSign())		
@@ -75,3 +75,5 @@ if __name__ == "__main__":
 	print(airport)
 	print(airport.getDistance(fl.getPosition()))
 	print("--------------")
+	print(fl.getInformationString(airport.getIcao()))
+	print("--------------")	
